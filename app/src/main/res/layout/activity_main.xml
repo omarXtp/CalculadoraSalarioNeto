@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Salario Neto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 1. Salario bruto anual -->
+    <EditText
+        android:id="@+id/etSalarioBruto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Salario bruto anual (€)"
+        android:inputType="numberDecimal" />
+
+    <!-- 2. Número de pagas -->
+    <EditText
+        android:id="@+id/etNumPagas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de pagas (12 o 14)"
+        android:inputType="number" />
+
+    <!-- 3. Edad -->
+    <EditText
+        android:id="@+id/etEdad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Edad"
+        android:inputType="number" />
+
+    <!-- 4. Grupo profesional -->
+    <EditText
+        android:id="@+id/etGrupoProfesional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Grupo profesional (1, 2, 3 o 4)"
+        android:inputType="number" />
+
+    <!-- 5. Grado de discapacidad -->
+    <EditText
+        android:id="@+id/etDiscapacidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Grado de discapacidad (%)"
+        android:inputType="number" />
+
+    <!-- 6. Estado civil -->
+    <EditText
+        android:id="@+id/etEstadoCivil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado civil (Soltero / Casado)"
+        android:inputType="text" />
+
+    <!-- 7. Número de hijos -->
+    <EditText
+        android:id="@+id/etNumHijos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de hijos"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
