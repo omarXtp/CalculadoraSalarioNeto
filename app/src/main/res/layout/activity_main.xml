@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calculadora de Salario Neto"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp" />
 
@@ -26,7 +26,7 @@
         android:id="@+id/etNumPagas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Número de pagas (12 o 14)"
+        android:hint="Número de pagas (12 -- 14)"
         android:inputType="number" />
 
     <!-- 3. Edad -->
@@ -42,7 +42,7 @@
         android:id="@+id/etGrupoProfesional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Grupo profesional (1, 2, 3 o 4)"
+        android:hint="Grupo profesional (1 - 2 - 3 - 4)"
         android:inputType="number" />
 
     <!-- 5. Grado de discapacidad -->

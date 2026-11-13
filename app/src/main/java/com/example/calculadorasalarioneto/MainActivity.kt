@@ -32,12 +32,46 @@ class MainActivity : AppCompatActivity() {
             val estadoCivil = etEstadoCivil.text.toString()
             val numHijos = etNumHijos.text.toString().toIntOrNull() ?: 0
 
-            // Cálculo simulado de porcentaje de IRPF usando when
-            // Cálculo de deducciones usando condicionales if
-            // Cálculo de deducciones usando condicionales if
-            // Paso de parámetros y navegación con Intent
+
+            // Cálculo simulado de porcentaje de IRPF
+            val porcentajeIRPF = when {
+                salarioBruto <= 15000 -> 5.0
+                salarioBruto <= 30000 -> 15.0
+                else -> 22.0
+            }
+
+            // Cálculo de deducciones
+            var deducciones = numHijos * 300.0
+            if (estadoCivil == "Casado" || estadoCivil == "casado") {
+                deducciones += 200.0
+            }
+            if (edad >= 65) {
+            deducciones += 200.0
+            }
+            if (discapacidad >= 33) {
+            deducciones += 1000.0
+            }
+            if (grupo == 1 ) {
+            deducciones += 1000.0
+            }
+
+            var retencionIRPF = (salarioBruto * (porcentajeIRPF / 100.0)) - deducciones
+            if (retencionIRPF < 0) {
+                retencionIRPF = 0.0
+            }
+
+            val salarioNeto = salarioBruto - retencionIRPF
+
+            val salarioMensual = salarioNeto / numPagas
 
 
+            val intent = Intent(this, ResultadosActivity::class.java)
+            intent.putExtra("BRUTO", salarioBruto)
+            intent.putExtra("NETO", salarioNeto)
+            intent.putExtra("MENSUAL", salarioMensual)
+            intent.putExtra("IRPF", retencionIRPF)
+            intent.putExtra("DEDUCCIONES", deducciones)
+            startActivity(intent)
 
         }
     }
