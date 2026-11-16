@@ -19,8 +19,25 @@ class ResultadosActivity : AppCompatActivity() {
         val btnVolver: Button = findViewById(R.id.btnVolver)
 
         // Recoger parámetros enviados desde MainActivity
-        // Mostrar resultados en pantalla usando plantillas de String
-        // Volver a la vista anterior
+        val bruto = intent.getDoubleExtra("BRUTO", 0.0)
+        val neto = intent.getDoubleExtra("NETO", 0.0)
+        val mensual = intent.getDoubleExtra("MENSUAL", 0.0)
+        val irpf = intent.getDoubleExtra("IRPF", 0.0)
+        val deducciones = intent.getDoubleExtra("DEDUCCIONES", 0.0)
+
+
+        // Mostrar resultados en pantalla
+        tvSalarioBruto.text = "Salario bruto anual: $bruto €"
+        tvRetencionIrpf.text = "Retención de IRPF: $irpf €"
+        tvDeducciones.text = "Deducciones aplicadas: $deducciones €"
+        tvSalarioNeto.text = "Salario neto anual: $neto €"
+        tvSalarioMensual.text = "Salario neto mensual: $mensual €"
+
+
+        btnVolver.setOnClickListener {
+            finish()
+        }
+
 
 
     }
